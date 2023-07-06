@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  background-color: white;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400;
+  font-size: 20px
+}
+
+body img {
+  max-width: 100%;
+}
+
+.linkFont {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+  font-size: 17px;
+}
+
+.active {
+  color: black;
+  text-decoration: underline 2px;
+  text-underline-offset: 8px;
+}

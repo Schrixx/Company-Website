@@ -10,8 +10,8 @@ export const NavData = [
       icon: <AiFillHome />,
     },
     {
-      title: "Art",
-      path: "/portfolio",
+      title: "Artwork",
+      path: "/artwork",
       icon: <FaPaintBrush />,
     },
     {
