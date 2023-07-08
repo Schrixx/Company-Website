@@ -26,10 +26,10 @@ const Navbar = ({}: Props) => {
 
   return (
     <>
-      <header className='fixed top-0 w-full h-full'>
+      <header className='z-50 fixed top-0 w-full h-full'>
         <IconContext.Provider value={{ color: "#2c2c2c" }}>
           {/* navbar */}
-          <div className={`relative z-50 w-full bg-white lg:flex lg:justify-around transition-all duration-500 ${ sidebarState ? "" : "drop-shadow-lg" }`}>
+          <div className={`relative z-40 w-full bg-white lg:flex lg:justify-around transition-all duration-500 ${ sidebarState ? "" : "drop-shadow-lg" }`}>
             <div className="flex items-center justify-around py-6 lg:py-0">
               <a href="/">
                 <img src={logo} alt="A logo" className="w-[224px] h-[49px] hover:drop-shadow object-contain"/>

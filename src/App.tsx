@@ -1,13 +1,13 @@
 import { Routes, Route } from 'react-router-dom'
-import Home from 'pages/Home'
 import NotFound from './pages/NotFound'
+import Main from './pages/Main'
 
 const App = () => {
 
   return (
     <>
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/' element={<Main />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
     </>

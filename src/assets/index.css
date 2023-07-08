@@ -23,10 +23,21 @@ body img {
   max-width: 100%;
 }
 
-.linkFont {
-  font-family: 'Work Sans', sans-serif;
-  font-weight: 600;
-  font-size: 17px;
+.kms {
+  transform: translate(-50%, -50%);
+}
+
+@layer components {
+  .linkFont {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    font-size: 17px;
+  }
+
+  .angledSection {
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+  }
+
 }
 
 .active {
