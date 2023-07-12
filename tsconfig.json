@@ -20,7 +20,7 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
 
-    /* Absolute Paths */
+    /* Absolute paths */
     "baseUrl": "./",
     "paths": {
       "src/*": ["./src/*"],
