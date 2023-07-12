@@ -26,7 +26,7 @@ const Navbar = ({}: Props) => {
 
   return (
     <>
-      <header className='z-50 fixed top-0 w-full h-full'>
+      <header className={`z-50 fixed top-0 w-full ${sidebarState ? "lg:h-[95px] h-full" : "h-[95px]"}`}>
         <IconContext.Provider value={{ color: "#2c2c2c" }}>
           {/* navbar */}
           <div className={`relative z-40 w-full bg-white lg:flex lg:justify-around transition-all duration-500 ${ sidebarState ? "" : "drop-shadow-lg" }`}>
@@ -53,16 +53,15 @@ const Navbar = ({}: Props) => {
           </div>
 
           {/* mobile menu */}
-          {/* this div should be a container for the opacity transition */}
-          <div className={`${sidebarState ? "lg:opacity-0 opacity-100" : "opacity-0"} transition-opacity delay-200 duration-300`}>
-            <div className={`absolute ${sidebarState ? 'lg:top-[-100%] top-[97px]' : 'top-[-100%]'} bottom-0 left-0 bg-white flex flex-col w-full px-4 pb-4 transition-all duration-700`}>
+          <div className={`${sidebarState ? "lg:opacity-0 opacity-100" : "opacity-0"} transition-opacity delay-200 duration-500`}>
+            <div aria-hidden={!sidebarState} className={`absolute ${sidebarState ? 'lg:top-[-100%] top-[97px]' : 'top-[-100%]'} bottom-0 left-0 bg-white flex flex-col w-full px-4 pb-4 transition-all duration-700`}>
               <ul className="flex flex-col items-center w-full overflow-auto border-t-[1px] border-[#2c2c2c]">
                 {NavData.map((item, index) => {
                   return (
                     <li key={index} className="flex justify-between items-center w-full border-b-[1px] border-[#2c2c2c]">
                       <NavLink to={item.path} className="flex items-center text-[#5375A4] hover:text-black py-8 hover:drop-shadow rounded-sm tracking-wide w-full">
                         {item.icon}
-                        <span className="hover:drop-shadow-xl mx-8 uppercase">{item.title}</span> 
+                        <span className="hover:drop-shadow-xl mx-8 uppercase">{item.title}</span>
                       </NavLink>
                       <SlArrowRight />
                     </li>
