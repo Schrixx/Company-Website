@@ -1,30 +1,80 @@
+import One from 'assets/numbers/one.svg'
+import Two from 'assets/numbers/two.svg'
+import Three from 'assets/numbers/three.svg'
+import logo from "assets/logo.png"
+
 type Props = {}
 
 const Home = ({ }: Props) => {
   return (
     <>
       {/* main img + text */}
-      <div className="relative py-[95px] w-full flex flex-col justify-center items-center align-center">
-        <div className="h-[680px] w-full bg-[url('assets/BluePic.jpg')] bg-no-repeat bg-cover blur-sm brightness-75" />
-        <div className="absolute text-center w-4/5 flex flex-col items-center gap-4 text-white tracking-wide rounded-sm backdrop-blur">
-          <h1 className="text-4xl lg:text-5xl font-bold">Schrixx aims to deliver professional art for your creative projects or personal use.</h1>
-          <div className="md:h-[2px] w-4/6 bg-black"></div>
+      <div className="relative pt-[95px] w-full flex flex-col justify-center items-center">
+        <div className="bg-fixed h-[780px] w-full bg-[url('assets/BluePic3.jpg')] bg-no-repeat bg-cover brightness-50" />
+        {/* backdrop-blur-sm backdrop-brightness-125 */}
+        <div className="absolute text-center w-4/5 pb-5 flex flex-col items-center gap-4 text-white tracking-wide rounded-xl">
+          <h1 className="text-4xl md:text-5xl font-bold">Schrixx creates professional art for your creative projects or personal use.</h1>
+          <div className="h-[2px] w-4/6 bg-baliHai"></div>
           <p className="text-2xl font-medium">Commision talented illustrators that will ensure your artwork is of the highest quality.</p>
-          <a href=""><button className="border-2 w-fit p-2 border-white hover:border-black text-xl lg:text-3xl hover:bg-black font-medium">Contact Us</button></a>
+          <a href=""><button className="border-2 w-fit p-2 border-white hover:border-baliHai text-xl lg:text-3xl hover:bg-baliHai font-medium rounded-full">Contact Us</button></a>
         </div>
       </div>
 
-      {/*  */}
-      <div className="relative py-3 px-4">
-        <div className="h-[70px]"></div>
-        <div className="absolute top-0 left-0 flex text-center flex-col gap-8">
-          <h1 className="text-4xl lg:text-5xl font-bold">The Process</h1>
-          <p className="text-2xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus recusandae praesentium impedit est officiis maiores, asperiores nam assumenda tempore necessitatibus voluptatem, placeat consectetur similique libero accusantium deleniti quod, modi error sint distinctio dicta adipisci. Eos aperiam, voluptatem eius expedita, vel, natus odio qui repudiandae totam ea neque consectetur a laudantium.</p>
+      {/* about */}
+      <div className='py-[95px] min-h-[600px] w-full flex flex-col items-center justify-center'>
+        <div className='w-4/5 text-center tracking-wide text-cloudBurstBlue flex flex-col items-center gap-8'>
+          <div className='flex flex-col gap-4 w-full items-center'>
+            <p className='text-baliHai'>about us...</p>
+            <h1 className='text-4xl md:text-5xl font-semibold'>an artist made company</h1>
+            <div className='h-2 md:h-3 bg-bostonBlue w-4/6'></div>
+          </div>
+          <p className='mt-8'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem ipsa iusto, architecto numquam nulla dolor molestiae error vel reprehenderit voluptates debitis itaque, placeat quibusdam porro quia voluptatum ratione nam inventore odio libero perferendis consequatur aliquam! Minus aliquid sed officia. Sit.</p>
+          <a href=""><button className="border-2 w-fit p-2 border-bostonBlue hover:bg-bostonBlue hover:text-white text-xl lg:text-3xl font-medium rounded-full">Learn More</button></a>
         </div>
       </div>
-      <div className="aspect-[960/300] w-full bg-no-repeat bg-cover bg-[url('assets/layeredWaves.svg')] border-t-2"></div>
-      <div className="aspect-[960/300] w-full bg-no-repeat bg-cover bg-[url('assets/bottomWave.svg')]"></div>
+
+      {/* artworks */}
+      <div className='min-h-[400px] w-full flex items-center'>
+        <div className="absolute h-[400px] w-full bg-[url('assets/wave.svg')] bg-no-repeat bg-cover" />
+        <div className='z-20'>
+          <img src={logo} alt="A logo" className="logo hover:drop-shadow object-contain"/>
+          <div className='tracking-wide'>
+            <p></p>
+            <h1></h1>
+            <p></p>
+          </div>
+        </div>
+
+      </div>
+
+      {/* process */}
+      <div className="py-[95px] w-full flex flex-col items-center pb-[95px]">
+        <div className="w-4/5 text-center flex flex-col gap-10 tracking-wide">
+          <h1 className="text-3xl lg:text-4xl font-bold">The Process</h1>
+          <p>The process is simple and easy to understand!</p>
+          <div className="flex flex-col items-center gap-10 md:flex-row md:justify-center md:items-baseline">
+            <div className="w-full md:w-[33.3333%] flex flex-col items-center gap-10">
+              <img src={One} alt="one" className="h-20 w-20" />
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione veritatis tenetur explicabo consequuntur itaque error.</p>
+            </div>
+            <div className="w-full md:w-[33.3333%] flex flex-col items-center gap-10">
+              <img src={Two} alt="two" className="h-20 w-20" />
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione veritatis tenetur explicabo consequuntur itaque error.</p>
+            </div>
+            <div className="w-full md:w-[33.3333%] flex flex-col items-center gap-10">
+              <img src={Three} alt="three" className="h-20 w-20" />
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione veritatis tenetur explicabo consequuntur itaque error.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* reviews */}
+
+      {/* footer */}
     </>
+
+    
   )
 }
 

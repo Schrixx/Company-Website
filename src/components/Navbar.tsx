@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { NavData } from "src/data/NavbarData"
 import { NavLink } from "react-router-dom"
-import logo from 'assets/logo.png'
+import logo from 'assets/logo2.png'
 import { IconContext } from 'react-icons'
 
 import { FaBars } from "react-icons/fa"
@@ -27,12 +27,12 @@ const Navbar = ({}: Props) => {
   return (
     <>
       <header className={`z-50 fixed top-0 w-full ${sidebarState ? "lg:h-[97px] h-full" : "h-[97px]"} transition-all duration-1000`}>
-        <IconContext.Provider value={{ color: "#2c2c2c" }}>
+        <IconContext.Provider value={{ color: "#223051" }}>
           {/* navbar */}
           <div aria-hidden={!sidebarState} className={`relative z-40 w-full bg-white lg:flex lg:justify-around transition-all duration-500 ${ sidebarState ? "" : "drop-shadow-lg" }`}>
             <div className="flex items-center justify-around py-6 lg:py-0">
               <a href="/">
-                <img src={logo} alt="A logo" className="w-[224px] h-[49px] hover:drop-shadow object-contain"/>
+                <img src={logo} alt="A logo" className="logo hover:drop-shadow object-contain"/>
               </a>
               <button className="lg:hidden flex items-center gap-4" onClick={sidebarHandler}>
                 <span className='hidden md:block'>Menu</span>
@@ -43,7 +43,7 @@ const Navbar = ({}: Props) => {
               {NavData.map((item, index) => {
                 return (
                   <li key={index} className="">
-                    <NavLink to={item.path} className="text-[#2b78c5] hover:text-black hover:drop-shadow pb-[2.25rem] pt-[2.36rem] px-6 hover:bg-[#8fb3ff] tracking-wide rounded-sm linkFont">
+                    <NavLink to={item.path} className="text-cloudBurstBlue hover:text-white hover:bg-fedora hover:drop-shadow pb-[2.33rem] pt-[2.36rem] px-6 tracking-wide rounded-sm linkFont">
                       <span className="hover:drop-shadow-xl">{item.title}</span>
                     </NavLink>
                   </li>
@@ -55,11 +55,11 @@ const Navbar = ({}: Props) => {
           {/* mobile menu */}
           <div className={`${sidebarState ? "lg:opacity-0 opacity-100" : "opacity-0"} transition-opacity delay-75 duration-500`}>
             <div aria-hidden={!sidebarState} className={`absolute ${sidebarState ? 'lg:top-[-100%] top-[97px]' : 'top-[-100%]'} bottom-0 left-0 bg-white flex flex-col w-full px-4 pb-4`}>
-              <ul className="flex flex-col items-center w-full overflow-auto border-t-[1px] border-[#2c2c2c]">
+              <ul className="flex flex-col items-center w-full overflow-auto border-t-[1px] border-darkGray">
                 {NavData.map((item, index) => {
                   return (
-                    <li key={index} className="flex justify-between items-center w-full border-b-[1px] border-[#2c2c2c]">
-                      <NavLink to={item.path} className="flex items-center text-[#2b78c5] hover:text-black py-8 hover:drop-shadow rounded-sm tracking-wide w-full">
+                    <li key={index} className="flex justify-between items-center w-full border-b-[1px] border-darkGray">
+                      <NavLink to={item.path} className="flex items-center text-cloudBurstBlue hover:text-fedora py-8 hover:drop-shadow rounded-sm tracking-wide w-full">
                         {item.icon}
                         <span className="hover:drop-shadow-xl mx-8 uppercase">{item.title}</span>
                       </NavLink>
