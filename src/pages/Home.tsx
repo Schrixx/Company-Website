@@ -1,7 +1,8 @@
 import One from 'assets/numbers/one.svg'
 import Two from 'assets/numbers/two.svg'
 import Three from 'assets/numbers/three.svg'
-import logo from "assets/logo.png"
+import { TfiAlarmClock } from 'react-icons/tfi'
+import { IconContext } from 'react-icons'
 
 type Props = {}
 
@@ -12,7 +13,7 @@ const Home = ({ }: Props) => {
       <div className="relative pt-[95px] w-full flex flex-col justify-center items-center">
         <div className="bg-fixed h-[780px] w-full bg-[url('assets/BluePic3.jpg')] bg-no-repeat bg-cover brightness-50" />
         {/* backdrop-blur-sm backdrop-brightness-125 */}
-        <div className="absolute text-center w-4/5 pb-5 flex flex-col items-center gap-4 text-white tracking-wide rounded-xl">
+        <div className="absolute text-center w-9/12 pb-5 flex flex-col items-center gap-4 text-white tracking-wide rounded-xl">
           <h1 className="text-4xl md:text-5xl font-bold">Schrixx creates professional art for your creative projects or personal use.</h1>
           <div className="h-[2px] w-4/6 bg-baliHai"></div>
           <p className="text-2xl font-medium">Commision talented illustrators that will ensure your artwork is of the highest quality.</p>
@@ -22,7 +23,7 @@ const Home = ({ }: Props) => {
 
       {/* about */}
       <div className='py-[95px] min-h-[600px] w-full flex flex-col items-center justify-center'>
-        <div className='w-4/5 text-center tracking-wide text-cloudBurstBlue flex flex-col items-center gap-8'>
+        <div className='w-9/12 text-center tracking-wide text-cloudBurstBlue flex flex-col items-center gap-8'>
           <div className='flex flex-col gap-4 w-full items-center'>
             <p className='text-baliHai'>about us...</p>
             <h1 className='text-4xl md:text-5xl font-semibold'>an artist made company</h1>
@@ -33,23 +34,26 @@ const Home = ({ }: Props) => {
         </div>
       </div>
 
-      {/* artworks */}
-      <div className='min-h-[400px] w-full flex items-center'>
-        <div className="absolute h-[400px] w-full bg-[url('assets/wave.svg')] bg-no-repeat bg-cover" />
-        <div className='z-20'>
-          <img src={logo} alt="A logo" className="logo hover:drop-shadow object-contain"/>
-          <div className='tracking-wide'>
-            <p></p>
-            <h1></h1>
-            <p></p>
+      {/* why us */}
+      <IconContext.Provider value={{color: '#746671'}}>
+        <div className='relative h-[1000px] w-full flex flex-col items-center justify-start'>
+          <div className='absolute min-h-[850px] top-0 bg-gradient-to-tl from-bostonBlue to-baliHai w-full' />
+          <div className='mt-20 relative h-full w-3/5 z-20 flex flex-col items-center text-white tracking-wide gap-8'>
+            <div>
+              <h1 className='text-4xl font-semibold'>Why choose Schrixx?</h1>
+              <p></p>
+            </div>
+            <div className='h-1/3 w-full bg-cloudBurstBlue rounded-lg'>
+              <TfiAlarmClock />
+              <p></p>
+            </div>
           </div>
         </div>
-
-      </div>
+      </IconContext.Provider>
 
       {/* process */}
       <div className="py-[95px] w-full flex flex-col items-center pb-[95px]">
-        <div className="w-4/5 text-center flex flex-col gap-10 tracking-wide">
+        <div className="w-9/12 text-center flex flex-col gap-10 tracking-wide">
           <h1 className="text-3xl lg:text-4xl font-bold">The Process</h1>
           <p>The process is simple and easy to understand!</p>
           <div className="flex flex-col items-center gap-10 md:flex-row md:justify-center md:items-baseline">
