@@ -13,6 +13,7 @@ export default defineConfig({
       components: "/src/components",
       ui: "/src/components/ui",
       pages: "/src/pages",
+      lib: "/src/lib",
     },
   },
 })

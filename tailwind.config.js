@@ -10,7 +10,11 @@ module.exports = {
         baliHai: "#83A2B5",
         fedora: "#746671",
         cloudBurstBlue: "#223051",
+        rum: "#826C85",
       },
+      boxShadow: {
+        '3xl': '0 35px 60px -15px rgba(0, 0, 0, 0.3)'
+      }
     },
   },
   plugins: [],

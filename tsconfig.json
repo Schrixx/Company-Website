@@ -29,7 +29,8 @@
       "data/*": ["./src/data"],
       "components/*": ["./src/components"],
       "ui/*": ["./src/components/ui"],
-      "pages/*": ["./src/pages/*"]
+      "pages/*": ["./src/pages/*"],
+      "lib/*": ["./src/lib/*"],
     }
   },
   "include": ["src"],
