@@ -10,10 +10,15 @@ module.exports = {
         baliHai: "#83A2B5",
         fedora: "#746671",
         cloudBurstBlue: "#223051",
-        rum: "#826C85",
+        falcon: "#7D6069",
+        outerSpace: "#2B3A3D",
       },
       boxShadow: {
-        '3xl': '0 35px 60px -15px rgba(0, 0, 0, 0.3)'
+        'container': "0px 0.5rem 1rem 0px rgba(9, 30, 66, 0.15)",
+        'smallContainer': "rgba(9, 30, 66, 0.15) 0px 0.5rem 1rem 1px",
+      },
+      padding: {
+        standard: "95px"
       }
     },
   },

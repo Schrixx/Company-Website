@@ -5,12 +5,14 @@ import { cn } from "lib/utils"
 export const headingVariants = cva('', {
     variants: {
         font: {
+            medium: "font-medium",
             semiBold: "font-semibold",
             bold: "font-bold",
         },
         size: {
           default: "text-4xl md:text-5xl",
           sm: "text-xl",
+          submd: "text-2xl",
           md: "text-3xl",
           lg: "text-4xl",
           xl: "text-5xl",
@@ -19,7 +21,14 @@ export const headingVariants = cva('', {
     defaultVariants: {
       font: "semiBold",
       size: "default"
-    }
+    },
+    compoundVariants: [
+      {
+        font: "semiBold",
+        size: "submd",
+        class: "reviewHeading",
+      },
+    ],
 })
 
 interface HeadingProps extends HTMLAttributes<HTMLHeadingElement>, VariantProps<typeof headingVariants> {
