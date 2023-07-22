@@ -10,8 +10,8 @@ module.exports = {
         baliHai: "#83A2B5",
         fedora: "#746671",
         cloudBurstBlue: "#223051",
-        falcon: "#7D6069",
-        outerSpace: "#2B3A3D",
+        bostonCompliment: "#C5782B",
+        revolver: "#221931",
       },
       boxShadow: {
         'container': "0px 0.5rem 1rem 0px rgba(9, 30, 66, 0.15)",

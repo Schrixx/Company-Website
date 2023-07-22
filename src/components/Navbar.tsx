@@ -13,7 +13,7 @@ import { BsTwitter } from "react-icons/bs"
 type Props = {}
 
 const Navbar = ({}: Props) => {
-  const [sidebarState, setSidebarState] = useState(false)
+  const [sidebarState, setSidebarState] = useState<boolean>(false)
 
   // prevent body overflow while mobile interface active
   useEffect(() => {
