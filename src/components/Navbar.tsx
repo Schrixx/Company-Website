@@ -9,10 +9,7 @@ import { SlArrowRight } from "react-icons/sl"
 import { BsInstagram } from "react-icons/bs"
 import { BsTwitter } from "react-icons/bs"
 
-
-type Props = {}
-
-const Navbar = ({}: Props) => {
+const Navbar = () => {
   const [sidebarState, setSidebarState] = useState<boolean>(false)
 
   // prevent body overflow while mobile interface active
@@ -42,7 +39,7 @@ const Navbar = ({}: Props) => {
             <ul className="list-none md:hidden lg:flex flex-row relative my-8 hidden">
               {NavData.map((item, index) => {
                 return (
-                  <li key={index} className="">
+                  <li key={index}>
                     <NavLink to={item.path} className="text-cloudBurstBlue hover:text-white hover:bg-fedora hover:drop-shadow pb-[2.33rem] pt-[2.36rem] px-6 tracking-wide rounded-sm linkFont">
                       <span className="hover:drop-shadow-xl">{item.title}</span>
                     </NavLink>

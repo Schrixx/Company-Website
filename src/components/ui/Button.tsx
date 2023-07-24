@@ -2,7 +2,7 @@ import { cva, VariantProps } from "class-variance-authority"
 import { ButtonHTMLAttributes, forwardRef, ReactNode } from "react"
 import { cn } from "lib/utils"
 
-export const buttonVariants = cva('border-2 w-fit p-2 text-xl lg:text-3xl font-medium rounded-full', {
+const buttonVariants = cva('border-2 w-fit p-2 text-xl lg:text-3xl font-medium rounded-full', {
     variants: {
         variant: {
             default: "border-white hover:border-baliHai hover:bg-baliHai",

@@ -9,10 +9,10 @@ import { BsChevronLeft } from 'react-icons/bs'
 import { IconContext } from 'react-icons'
 import Button from 'src/components/ui/Button'
 import LargeHeading from 'src/components/ui/LargeHeading'
+import { v4 as uuidv4 } from 'uuid'
+import { ReviewsData } from 'src/data/ReviewsData'
 
-type Props = {}
-
-const Home = ({}: Props) => {
+const Home = () => {
   return (
     <>
       {/* main img + text */}
@@ -104,67 +104,27 @@ const Home = ({}: Props) => {
             <LargeHeading size="lg">Read what our customers say...</LargeHeading>
           </div>
         </div>
-        <div className='flex lg:max-w-[70%] justify-end gap-8'>
-          <div className='bg-balihai h-5 w-5 rounded-full'><BsChevronLeft /></div>
-          <div className='bg-balihai rounded-full'><BsChevronRight /></div>
-        </div>
+        <IconContext.Provider value={{className: "text-cloudBurstBlue hover:text-[#61D9FF] h-6 w-6"}}>
+          <div className='flex justify-end mr-[10%] gap-8'>
+            <div className='flex justify-center items-center bg-black bg-opacity-10 rounded-full h-10 w-10'><BsChevronLeft /></div>
+            <div className='flex justify-center items-center bg-black bg-opacity-10 rounded-full h-10 w-10'><BsChevronRight /></div>
+          </div>
+        </IconContext.Provider>
         <div className='relative z-10 px-4 h-full w-full flex flex-nowrap gap-8 overflow-x-auto tracking-wide text-white overflow-y-hidden'>
-          <div className='reviewContainer'>
-            <div className='absolute z-10 h-12 w-full bg-cloudBurstBlue' />
-            <div className="absolute w-full z-10 h-[900px] bg-[url(assets/smallCircles.svg)] bg-cover bg-no-repeat opacity-5 bg-left-top" />
-            <div className='relative z-20 flex flex-col gap-4 items-center'>
-              <div className="h-24 w-24 bg-[url('assets/pfp.svg')] bg-cover bg-no-repeat bg-center rounded-full" />
-              <LargeHeading size="md">Hello</LargeHeading>
-            </div>
-            <p className='relative z-20'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit eveniet itaque magni vitae. Quia, esse.</p>
-          </div>
-          <div className='reviewContainer'>
-            <div className='absolute z-10 h-12 w-full bg-cloudBurstBlue' />
-            <div className="absolute w-full z-10 h-[900px] bg-[url(assets/smallCircles.svg)] bg-cover bg-no-repeat opacity-5 bg-top" />
-            <div className='relative z-20 flex flex-col gap-4 items-center'>
-              <div className="h-24 w-24 bg-[url('assets/pfp.svg')] bg-cover bg-no-repeat bg-center rounded-full" />
-              <LargeHeading size="md">Hello</LargeHeading>
-            </div>
-            <p className='relative z-20'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit eveniet itaque magni vitae. Quia, esse.</p>
-          </div>
-          <div className='reviewContainer'>
-            <div className='absolute z-10 h-12 w-full bg-cloudBurstBlue' />
-            <div className="absolute w-full z-10 h-[900px] bg-[url(assets/smallCircles.svg)] bg-cover bg-no-repeat opacity-5 bg-right" />
-            <div className='relative z-20 flex flex-col gap-4 items-center'>
-              <div className="h-24 w-24 bg-[url('assets/pfp.svg')] bg-cover bg-no-repeat bg-center rounded-full" />
-              <LargeHeading size="md">Hello</LargeHeading>
-            </div>
-            <p className='relative z-20'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit eveniet itaque magni vitae. Quia, esse.</p>
-          </div>
-          <div className='reviewContainer'>
-            <div className='absolute z-10 h-12 w-full bg-cloudBurstBlue' />
-            <div className="absolute w-full z-10 h-[900px] bg-[url(assets/smallCircles.svg)] bg-cover bg-no-repeat opacity-5 bg-bottom" />
-            <div className='relative z-20 flex flex-col gap-4 items-center'>
-              <div className="h-24 w-24 bg-[url('assets/pfp.svg')] bg-cover bg-no-repeat bg-center rounded-full" />
-              <LargeHeading size="md">Hello</LargeHeading>
-            </div>
-            <p className='relative z-20'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit eveniet itaque magni vitae. Quia, esse.</p>
-          </div>
-          <div className='reviewContainer'>
-            <div className='absolute z-10 h-12 w-full bg-cloudBurstBlue' />
-            <div className="absolute w-full z-10 h-[900px] bg-[url(assets/smallCircles.svg)] bg-cover bg-no-repeat opacity-5 bg-left" />
-            <div className='relative z-20 flex flex-col gap-4 items-center'>
-              <div className="h-24 w-24 bg-[url('assets/pfp.svg')] bg-cover bg-no-repeat bg-center rounded-full" />
-              <LargeHeading size="md">Hello</LargeHeading>
-            </div>
-            <p className='relative z-20'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit eveniet itaque magni vitae. Quia, esse.</p>
-          </div>
-          <div className='reviewContainer'>
-            <div className='absolute z-10 h-12 w-full bg-cloudBurstBlue' />
-            <div className="absolute w-full z-10 h-[900px] bg-[url(assets/smallCircles.svg)] bg-cover bg-no-repeat opacity-5 bg-top" />
-            <div className='relative z-20 flex flex-col gap-4 items-center'>
-              <div className="h-24 w-24 bg-[url('assets/pfp.svg')] bg-cover bg-no-repeat bg-center rounded-full" />
-              <LargeHeading size="md">Hello</LargeHeading>
-            </div>
-            <p className='relative z-20'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit eveniet itaque magni vitae. Quia, esse.</p>
-          </div>
+          {ReviewsData.map((item) => {
+            return (
+              <div key={uuidv4()} className='relative bg-bostonBlue p-6 rounded-lg min-w-[25rem] text-center flex flex-col items-center gap-8 shadow-smallContainer'>
+                <div className='absolute z-10 h-12 w-full bg-cloudBurstBlue' />
+                <div className={`absolute w-full z-10 h-[900px] bg-[url(assets/smallCircles.svg)] bg-cover bg-no-repeat opacity-5 ${item.bgPos}`} />
+                <div className='relative z-20 flex flex-col gap-4 items-center'>
+                  <div className="h-24 w-24 bg-[url('assets/pfp.svg')] bg-cover bg-no-repeat bg-center rounded-full" />
+                    <LargeHeading size="md">{ item.name }</LargeHeading>
+                  </div>
+                <p className='relative z-20'>{ item.comment }</p>
+              </div>
+            )
+          })}
         </div>
-        <div></div>
       </div>
 
       {/* footer */}

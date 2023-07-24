@@ -2,7 +2,7 @@ import { cva, VariantProps } from "class-variance-authority"
 import { HTMLAttributes, forwardRef, ReactNode } from "react"
 import { cn } from "lib/utils"
 
-export const headingVariants = cva('', {
+const headingVariants = cva('', {
     variants: {
         font: {
             medium: "font-medium",
