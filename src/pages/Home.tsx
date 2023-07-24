@@ -11,8 +11,18 @@ import Button from 'src/components/ui/Button'
 import LargeHeading from 'src/components/ui/LargeHeading'
 import { v4 as uuidv4 } from 'uuid'
 import { ReviewsData } from 'src/data/ReviewsData'
+import { useRef } from 'react'
 
 const Home = () => {
+
+  const scrollRef = useRef<HTMLDivElement>(null)
+
+  const scrollHandler = (direction: number) => {
+    if (scrollRef.current !== null) {
+      scrollRef.current.scrollLeft += direction;
+    }
+  }
+
   return (
     <>
       {/* main img + text */}
@@ -28,7 +38,7 @@ const Home = () => {
 
       {/* about */}
       <div className='py-standard min-h-[600px] w-full flex flex-col items-center justify-center'>
-        <div className='w-9/12 text-center tracking-wide text-cloudBurstBlue flex flex-col items-center gap-8'>
+        <div className='relative z-20 w-9/12 text-center tracking-wide text-cloudBurstBlue flex flex-col items-center gap-8'>
           <div className='flex flex-col gap-4 w-full items-center'>
             <p className='text-baliHai'>about us...</p>
             <LargeHeading font="semiBold">an artist made company</LargeHeading>
@@ -73,7 +83,7 @@ const Home = () => {
 
       {/* process */}
       <IconContext.Provider value={{color: "white", size: "80px"}}>
-        <div className="py-standard w-full flex flex-col items-center">
+        <div className="py-standard w-full flex flex-col items-center bg-gradient-to-b from-white to-turqoise">
           <div className="w-full z-10 text-center flex flex-col gap-10 tracking-wide">
             <div className='flex flex-col gap-4'>
               <h1 className="text-3xl lg:text-4xl font-bold text-cloudBurstBlue">Process</h1>
@@ -98,7 +108,7 @@ const Home = () => {
       </IconContext.Provider>
 
       {/* reviews */}
-      <div className='relative py-standard min-h-[800px] flex flex-col justify-center gap-8'>
+      <div className='relative py-standard min-h-[800px] flex flex-col justify-center gap-8 bg-gradient-to-b from-turqoise to-white'>
         <div className='px-4 w-full flex flex-col justify-start sm:max-w-lg mx-auto'>
           <div className='text-cloudBurstBlue drop-shadow-2xl'>
             <LargeHeading size="lg">Read what our customers say...</LargeHeading>
@@ -106,16 +116,20 @@ const Home = () => {
         </div>
         <IconContext.Provider value={{className: "text-cloudBurstBlue hover:text-[#61D9FF] h-6 w-6"}}>
           <div className='flex justify-end mr-[10%] gap-8'>
-            <div className='flex justify-center items-center bg-black bg-opacity-10 rounded-full h-10 w-10'><BsChevronLeft /></div>
-            <div className='flex justify-center items-center bg-black bg-opacity-10 rounded-full h-10 w-10'><BsChevronRight /></div>
+            <div className='hidden lg:flex justify-center items-center bg-black bg-opacity-10 rounded-full h-10 w-10'>
+              <button onClick={() => scrollHandler(-300)}><BsChevronLeft /></button>
+            </div>
+            <div className='hidden lg:flex justify-center items-center bg-black bg-opacity-10 rounded-full h-10 w-10'>
+              <button onClick={() => scrollHandler(300)}><BsChevronRight /></button>
+            </div>
           </div>
         </IconContext.Provider>
-        <div className='relative z-10 px-4 h-full w-full flex flex-nowrap gap-8 overflow-x-auto tracking-wide text-white overflow-y-hidden'>
+        <div ref={scrollRef} className='relative z-10 px-4 h-full w-full flex flex-nowrap gap-24 text-white scroll-py-8 overscroll-contain overflow-x-scroll lg:overflow-x-hidden tracking-wide overflow-y-hidden snap-x snap-mandatory scroll-smooth'>
           {ReviewsData.map((item) => {
             return (
-              <div key={uuidv4()} className='relative bg-bostonBlue p-6 rounded-lg min-w-[25rem] text-center flex flex-col items-center gap-8 shadow-smallContainer'>
-                <div className='absolute z-10 h-12 w-full bg-cloudBurstBlue' />
-                <div className={`absolute w-full z-10 h-[900px] bg-[url(assets/smallCircles.svg)] bg-cover bg-no-repeat opacity-5 ${item.bgPos}`} />
+              <div key={uuidv4()} className='relative bg-bostonBlue p-6 rounded-lg sm:min-w-[25rem] text-center flex flex-col items-center gap-8 shadow-smallContainer snap-center'>
+                <div className='absolute h-12 w-full bg-cloudBurstBlue' />
+                <div className={`absolute top-0 w-full h-[900px] bg-[url(assets/smallCircles.svg)] bg-cover bg-no-repeat opacity-5 ${item.bgPos}`} />
                 <div className='relative z-20 flex flex-col gap-4 items-center'>
                   <div className="h-24 w-24 bg-[url('assets/pfp.svg')] bg-cover bg-no-repeat bg-center rounded-full" />
                     <LargeHeading size="md">{ item.name }</LargeHeading>
@@ -126,6 +140,8 @@ const Home = () => {
           })}
         </div>
       </div>
+
+      {/* partnered with */}
 
       {/* footer */}
       <div className='mt-[95px] min-h-[200px] bg-gradient-to-b from-[#2C3F6B] to-cloudBurstBlue w-full flex items-center justify-center text-white'>Under Construction</div>

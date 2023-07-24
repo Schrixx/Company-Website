@@ -12,6 +12,7 @@ module.exports = {
         cloudBurstBlue: "#223051",
         bostonCompliment: "#C5782B",
         revolver: "#221931",
+        turqoise: "C7FFF4",
       },
       boxShadow: {
         'container': "0px 0.5rem 1rem 0px rgba(9, 30, 66, 0.15)",
