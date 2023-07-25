@@ -7,11 +7,20 @@ import { TbHexagonNumber3 } from 'react-icons/tb'
 import { BsChevronRight } from 'react-icons/bs'
 import { BsChevronLeft } from 'react-icons/bs'
 import { IconContext } from 'react-icons'
+
+import redBird from 'assets/logos/bird.png'
+import cat from 'assets/logos/cat.png'
+import redDragon from 'assets/logos/redDragon.png'
+import colorfulDragon from 'assets/logos/colorfulDragon.png'
+import vials from 'assets/logos/vials.png'
+import swirl from 'assets/logos/swirl.png'
+
 import Button from 'src/components/ui/Button'
 import LargeHeading from 'src/components/ui/LargeHeading'
 import { v4 as uuidv4 } from 'uuid'
 import { ReviewsData } from 'src/data/ReviewsData'
 import { useRef } from 'react'
+import { NavLink } from 'react-router-dom'
 
 const Home = () => {
 
@@ -31,21 +40,21 @@ const Home = () => {
         <div className="absolute text-center w-9/12 pb-5 flex flex-col items-center gap-4 text-white tracking-wide rounded-xl">
           <LargeHeading font="bold">Schrixx creates professional art for your creative projects or personal use.</LargeHeading>
           <div className="h-[2px] w-4/6 bg-baliHai"></div>
-          <p className="text-2xl font-medium">Commision talented illustrators that will ensure your artwork is of the highest quality.</p>
-          <a href=""><Button>Contact Us</Button></a>
+          <p className="text-2xl font-medium">Commision talented artists that will ensure your artwork is of the highest quality.</p>
+          <NavLink to="/contact"><Button>Contact Us</Button></NavLink>
         </div>
       </div>
 
       {/* about */}
       <div className='py-standard min-h-[600px] w-full flex flex-col items-center justify-center'>
         <div className='relative z-20 w-9/12 text-center tracking-wide text-cloudBurstBlue flex flex-col items-center gap-8'>
-          <div className='flex flex-col gap-4 w-full items-center'>
+          <div className='flex flex-col gap-4 w-full items-center text-black'>
             <p className='text-baliHai'>about us...</p>
             <LargeHeading font="semiBold">an artist made company</LargeHeading>
             <div className='h-2 md:h-3 bg-bostonBlue w-4/6'></div>
           </div>
           <p className='mt-8'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem ipsa iusto, architecto numquam nulla dolor molestiae error vel reprehenderit voluptates debitis itaque, placeat quibusdam porro quia voluptatum ratione nam inventore odio libero perferendis consequatur aliquam! Minus aliquid sed officia. Sit.</p>
-          <a href=""><Button variant="blue">Learn More</Button></a>
+          <NavLink to="/about"><Button variant="blue">Learn More</Button></NavLink>
         </div>
       </div>
 
@@ -83,10 +92,10 @@ const Home = () => {
 
       {/* process */}
       <IconContext.Provider value={{color: "white", size: "80px"}}>
-        <div className="py-standard w-full flex flex-col items-center bg-gradient-to-b from-white to-turqoise">
+        <div className="py-standard w-full flex flex-col items-center">
           <div className="w-full z-10 text-center flex flex-col gap-10 tracking-wide">
             <div className='flex flex-col gap-4'>
-              <h1 className="text-3xl lg:text-4xl font-bold text-cloudBurstBlue">Process</h1>
+              <h1 className="text-3xl lg:text-4xl font-bold text-black">Process</h1>
               <p className='text-baliHai'>The process is simple and easy to understand!</p>
             </div>     
             <div className="px-4 flex flex-col items-center gap-10 lg:flex-row md:justify-center md:items-baseline text-white">
@@ -107,12 +116,27 @@ const Home = () => {
         </div>
       </IconContext.Provider>
 
+      {/* partners */}
+      <div className='relative py-standard pb-0 w-full flex flex-col justify-center items-center gap-20 text-cloudBurstBlue'>
+        <div className='w-full md:w-1/2 text-center px-4 flex flex-col text-black gap-5'>
+          <LargeHeading size="lg">Trusted by Industry Leaders</LargeHeading>
+          <p className='text-cloudBurstBlue'>Our collaboration with industry leaders gives us ample experience and has allowed us to create quality and efficient art. As such, we've created a competitve edge clients look for.</p>
+          <p className='text-cloudBurstBlue'>Companies we've worked with:</p>
+        </div>
+        <div className='w-full md:w-1/2 flex flex-col flex-wrap md:flex-row justify-center items-center gap-10'>
+            <img src={redBird} alt="company logo" className='h-auto w-48' />
+            <img src={vials} alt="company logo" className='h-auto w-48' />
+            <img src={redDragon} alt="company logo" className='h-auto w-48' />
+            <img src={colorfulDragon} alt="company logo" className='h-auto w-48' />
+            <img src={swirl} alt="company logo" className='h-auto w-48' />
+            <img src={cat} alt="company logo" className='h-auto w-48' />
+        </div>
+      </div>
+
       {/* reviews */}
-      <div className='relative py-standard min-h-[800px] flex flex-col justify-center gap-8 bg-gradient-to-b from-turqoise to-white'>
-        <div className='px-4 w-full flex flex-col justify-start sm:max-w-lg mx-auto'>
-          <div className='text-cloudBurstBlue drop-shadow-2xl'>
-            <LargeHeading size="lg">Read what our customers say...</LargeHeading>
-          </div>
+      <div className='relative mt-20 py-standard pt-0 flex flex-col justify-center gap-8'>
+        <div className='px-4 w-full flex flex-col justify-center items-center text-black drop-shadow-2xl text-center'>
+          <LargeHeading size="lg">Trusted by Customers</LargeHeading>
         </div>
         <IconContext.Provider value={{className: "text-cloudBurstBlue hover:text-[#61D9FF] h-6 w-6"}}>
           <div className='flex justify-end mr-[10%] gap-8'>
@@ -124,7 +148,7 @@ const Home = () => {
             </div>
           </div>
         </IconContext.Provider>
-        <div ref={scrollRef} className='relative z-10 px-4 h-full w-full flex flex-nowrap gap-24 text-white scroll-py-8 overscroll-contain overflow-x-scroll lg:overflow-x-hidden tracking-wide overflow-y-hidden snap-x snap-mandatory scroll-smooth'>
+        <div ref={scrollRef} className='relative z-10 px-4 h-full w-full flex flex-nowrap gap-20 text-white overscroll-contain overflow-x-scroll lg:overflow-x-hidden tracking-wide overflow-y-hidden snap-x snap-mandatory scroll-smooth'>
           {ReviewsData.map((item) => {
             return (
               <div key={uuidv4()} className='relative bg-bostonBlue p-6 rounded-lg sm:min-w-[25rem] text-center flex flex-col items-center gap-8 shadow-smallContainer snap-center'>
@@ -140,14 +164,7 @@ const Home = () => {
           })}
         </div>
       </div>
-
-      {/* partnered with */}
-
-      {/* footer */}
-      <div className='mt-[95px] min-h-[200px] bg-gradient-to-b from-[#2C3F6B] to-cloudBurstBlue w-full flex items-center justify-center text-white'>Under Construction</div>
     </>
-
-    
   )
 }
 
