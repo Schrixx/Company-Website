@@ -4,6 +4,8 @@ import { NavLink } from "react-router-dom"
 import logo from 'assets/logo2.png'
 import { IconContext } from 'react-icons'
 
+import { v4 as uuidv4 } from 'uuid'
+
 import { FaBars } from "react-icons/fa"
 import { SlArrowRight } from "react-icons/sl"
 import { BsInstagram } from "react-icons/bs"
@@ -37,9 +39,9 @@ const Navbar = () => {
               </button>
             </div>
             <ul className="list-none md:hidden lg:flex flex-row relative my-8 hidden">
-              {NavData.map((item, index) => {
+              {NavData.map((item) => {
                 return (
-                  <li key={index}>
+                  <li key={uuidv4()}>
                     <NavLink to={item.path} className="text-cloudBurstBlue hover:text-white hover:bg-fedora hover:drop-shadow pb-[2.33rem] pt-[2.36rem] px-6 tracking-wide rounded-sm linkFont">
                       <span className="hover:drop-shadow-xl">{item.title}</span>
                     </NavLink>
@@ -53,9 +55,9 @@ const Navbar = () => {
           <div className={`${sidebarState ? "lg:opacity-0 opacity-100" : "opacity-0"} transition-opacity delay-75 duration-500`}>
             <div aria-hidden={!sidebarState} className={`absolute ${sidebarState ? 'lg:top-[-100%] top-[97px]' : 'top-[-100%]'} bottom-0 left-0 bg-white flex flex-col w-full px-4 pb-4`}>
               <ul className="flex flex-col items-center w-full overflow-auto border-t-[1px] border-darkGray">
-                {NavData.map((item, index) => {
+                {NavData.map((item) => {
                   return (
-                    <li key={index} className="flex justify-between items-center w-full border-b-[1px] border-darkGray">
+                    <li key={uuidv4()} className="flex justify-between items-center w-full border-b-[1px] border-darkGray">
                       <NavLink to={item.path} className="flex items-center text-cloudBurstBlue hover:text-fedora py-8 hover:drop-shadow rounded-sm tracking-wide w-full">
                         {item.icon}
                         <span className="hover:drop-shadow-xl mx-8 uppercase">{item.title}</span>
@@ -78,8 +80,6 @@ const Navbar = () => {
           </div>
         </IconContext.Provider>        
       </header>
-
-
     </>
   )
 }
