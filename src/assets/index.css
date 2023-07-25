@@ -32,11 +32,6 @@ body {
   font-size: 20px;
 }
 
-.logo {
-  width: 224px;
-  height: 49px;
-}
-
 @layer components {
   .linkFont {
     font-family: 'Work Sans', sans-serif;
@@ -44,22 +39,10 @@ body {
     font-size: 17px;
   }
   
-  .reviewContainer {
-    position: relative;
-    background-color: #2b78c5;
-    padding: 1.5rem;
-    border-radius: 8px;
-    min-width: 25rem;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    --tw-shadow: rgba(9, 30, 66, 0.15) 0px 0.5rem 1rem 1px;
-    --tw-shadow-colored: 0px 0.5rem 1rem 1px var(--tw-shadow-color);
-    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  .logo {
+    width: 224px;
+    height: 49px;
   }
-
 }
 
 .active {
