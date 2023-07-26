@@ -11,26 +11,41 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+::-webkit-scrollbar {
+  width: auto;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #E9E9E9; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #746671;
+}
+
 body {
   margin: 0;
   background-color: white;
   font-family: 'Work Sans', sans-serif;
   font-weight: 400;
-  font-size: 20px
+  font-size: 20px;
 }
 
-body img {
-  max-width: 100%;
-}
-
-.linkFont {
-  font-family: 'Work Sans', sans-serif;
-  font-weight: 600;
-  font-size: 17px;
+@layer components {
+  .linkFont {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    font-size: 17px;
+  }
+  
+  .logo {
+    width: 224px;
+    height: 49px;
+  }
 }
 
 .active {
-  color: black;
   text-decoration: underline 2px;
   text-underline-offset: 8px;
 }
