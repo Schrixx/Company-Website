@@ -1,4 +1,7 @@
-export const FooterData = [
+import { BsInstagram } from "react-icons/bs"
+import { BsTwitter } from "react-icons/bs"
+
+export const FooterTopData = [
     {
         title: "About Schrixx",
         text: "Learn about our background.",
@@ -30,5 +33,31 @@ export const FooterData = [
         border: "border-b-[1px]",
         padding: "pb-4 lg:py-4 lg:px-4",
         margin: "mb-4 lg:my-4",
+    },
+]
+
+export const FooterBottomData = [
+    {
+        title: "Privacy Policy",
+        path: "/privacy",
+    },
+    {
+        title: "Terms & Conditions",
+        path: "/terms",
+    },
+    {
+        title: "Copyright © 2023 Schrixx",
+        underline: "none",
+    },
+]
+
+export const FooterSocials = [
+    {
+        icon: <BsInstagram />,
+        url: "https://www.instagram.com",
+    },
+    {
+        icon: <BsTwitter />,
+        url: "https://www.twitter.com",
     },
 ]
