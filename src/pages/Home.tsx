@@ -23,6 +23,7 @@ import { v4 as uuidv4 } from 'uuid'
 import { ReviewsData } from 'src/data/ReviewsData'
 import { useRef } from 'react'
 import { NavLink } from 'react-router-dom'
+import Layout from 'src/components/Layout'
 
 const Home = () => {
 
@@ -35,10 +36,10 @@ const Home = () => {
   }
 
   return (
-    <>
+    <Layout>
       {/* main img + text */}
       <div className="relative pt-standard w-full flex flex-col justify-center items-center">
-        <div className="bg-fixed h-[780px] w-full bg-[url('assets/BluePic3.jpg')] bg-no-repeat bg-cover brightness-50" />
+        <div className="bg-fixed h-[780px] w-full bg-[url('assets/art/BluePic3.jpg')] bg-no-repeat bg-cover brightness-50" />
         <div className="absolute text-center w-9/12 pb-5 flex flex-col items-center gap-4 text-white tracking-wide rounded-xl">
           <LargeHeading font="bold">Schrixx creates professional art for your creative projects or personal use.</LargeHeading>
           <div className="h-[2px] w-4/6 bg-baliHai"></div>
@@ -150,12 +151,11 @@ const Home = () => {
             </div>
           </div>
         </IconContext.Provider>
-        <div ref={scrollRef} className='relative z-10 px-4 pb-standard h-full w-full flex flex-nowrap gap-20 text-white overflow-x-scroll lg:overflow-x-hidden tracking-wide overflow-y-hidden snap-x snap-mandatory scroll-smooth'>
+        <div ref={scrollRef} className='relative z-10 px-4 pb-standard h-full w-full flex flex-nowrap gap-20 text-cloudBurstBlue overflow-x-scroll lg:overflow-x-hidden tracking-wide overflow-y-hidden snap-x snap-mandatory scroll-smooth'>
           {ReviewsData.map((item) => {
             return (
-              <div key={uuidv4()} className='relative bg-bostonBlue p-6 rounded-lg sm:min-w-[25rem] text-center flex flex-col items-center gap-8 shadow-smallContainer snap-center'>
-                <div className='absolute h-12 w-full bg-cloudBurstBlue' />
-                {/* <div className={`absolute top-0 w-full h-[900px] bg-[url(assets/smallCircles.svg)] bg-contain bg-no-repeat opacity-5 ${item.bgPos}`} /> */}
+              <div key={uuidv4()} className='relative bg-white border-4 border-bostonBlue p-6 rounded-lg sm:min-w-[25rem] text-center flex flex-col items-center gap-8 shadow-container snap-center'>
+                <div className='absolute top-0 h-[4.5rem] w-full bg-bostonBlue' />
                 <div className='relative z-20 flex flex-col gap-4 items-center'>
                   <div className="h-24 w-24 bg-[url('assets/pfp.svg')] bg-cover bg-no-repeat bg-center rounded-full" />
                   <div className='flex items-center gap-2'>
@@ -163,14 +163,13 @@ const Home = () => {
                   </div>
                   <LargeHeading size="md">{ item.name }</LargeHeading>
                 </div>
-
                 <p className='relative z-20'>{ item.comment }</p> 
               </div>
             )
           })}
         </div>
       </div>
-    </>
+    </Layout>
   )
 }
 
