@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { NavData } from "src/data/NavbarData"
 import { NavLink } from "react-router-dom"
-import logo from 'assets/logo2.png'
+import logo from 'assets/logos/logo2.png'
 import { IconContext } from 'react-icons'
 
 import { v4 as uuidv4 } from 'uuid'
@@ -25,9 +25,10 @@ const Navbar = () => {
 
   return (
     <>
-      <header className={`z-50 fixed top-0 w-full ${sidebarState ? "lg:h-[97px] h-full" : "h-[97px]"} transition-all duration-1000`}>
+      <header id="nav" className={`z-50 fixed top-0 w-full ${sidebarState ? "lg:h-[97px] h-full" : "h-[97px]"} transition-all duration-1000`}>
+        
+        {/* navbar */}
         <IconContext.Provider value={{ color: "#223051" }}>
-          {/* navbar */}
           <div aria-hidden={!sidebarState} className={`relative z-40 w-full bg-white lg:flex lg:justify-around transition-all duration-500 ${ sidebarState ? "" : "drop-shadow-lg" }`}>
             <div className="flex items-center justify-around py-6 lg:py-0">
               <a href="/">
@@ -66,7 +67,6 @@ const Navbar = () => {
                     </li>
                   )
                 })}
-                {/* socials */}
                 <div className='flex justify-center gap-8 p-2 mt-8'>
                   <NavLink to="https://www.instagram.com/" target='_blank'>
                     <BsInstagram size='1.5rem' />
