@@ -10,18 +10,18 @@ export const NavData = [
       icon: <AiFillHome />,
     },
     {
-      title: "Artwork",
-      path: "/artwork",
-      icon: <FaPaintBrush />,
-    },
-    {
       title: "About",
       path: "/about",
       icon: <IoMdHelpCircle />,
     },
     {
+      title: "Artwork",
+      path: "/artwork",
+      icon: <FaPaintBrush />,
+    },
+    {
         title: "Contact",
         path: "/contact",
         icon: <GrContact />
-    }
+    },
   ];

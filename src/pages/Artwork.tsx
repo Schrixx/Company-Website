@@ -44,7 +44,7 @@ const Artwork = () => {
       <>
         {/* making the rows min-content makes it so text doesn't overflow */}
         <div key={uuidv4()} className={`${showState ? "grid" : "hidden xl:grid"} gap-8 xl:grid-rows-[min-content] p-8 bg-gray-300 rounded-md shadow-container snap-start`}>
-          <img src={bgImg} alt="art img" className="w-full brightness-75 aspect-video object-cover" />
+          <img src={bgImg} alt="art img" className="w-full brightness-75 aspect-video object-cover hover:scale-110 transition-transform duration-150" />
           <p>Image caption text.</p>
         </div>
       </>
@@ -57,19 +57,19 @@ const Artwork = () => {
       <>
         <div key={uuidv4()} className='grid xl:grid-flow-col grid-flow-row gap-8 snap-start'>
           <div className='grid gap-8 grid-rows-[min-content] p-8 bg-gray-300 rounded-md shadow-container'>
-            <img src={bgImg} alt="art img" className="w-full brightness-75 aspect-video object-cover" />
+            <img src={bgImg} alt="art img" className="w-full brightness-75 aspect-video object-cover hover:scale-110 transition-transform duration-150" />
           </div>
           <div className='grid gap-8 grid-rows-[min-content] p-8 bg-gray-300 rounded-md shadow-container'>
-            <img src={birdImg} alt="art img" className="w-full brightness-75 aspect-video object-cover" />
+            <img src={birdImg} alt="art img" className="w-full brightness-75 aspect-video object-cover hover:scale-110 transition-transform duration-150" />
           </div>
           <div className='grid gap-8 grid-rows-[min-content] p-8 bg-gray-300 rounded-md shadow-container'>
-            <img src={redFlowerImg} alt="art img" className="w-full brightness-75 aspect-video object-cover" />
+            <img src={redFlowerImg} alt="art img" className="w-full brightness-75 aspect-video object-cover hover:scale-110 transition-transform duration-150" />
           </div>
           <div className='grid gap-8 grid-rows-[min-content] p-8 bg-gray-300 rounded-md shadow-container'>
-            <img src={mtnImg} alt="art img" className="w-full brightness-75 aspect-video object-cover" />
+            <img src={mtnImg} alt="art img" className="w-full brightness-75 aspect-video object-cover hover:scale-110 transition-transform duration-150" />
           </div>
           <div className='grid gap-8 grid-rows-[min-content] p-8 bg-gray-300 rounded-md shadow-container'>
-            <img src={pinkFlowerImg} alt="art img" className="w-full brightness-75 aspect-video object-cover" />
+            <img src={pinkFlowerImg} alt="art img" className="w-full brightness-75 aspect-video object-cover hover:scale-110 transition-transform duration-150" />
           </div>
         </div>
       </>
@@ -96,7 +96,7 @@ const Artwork = () => {
       {/* grid-auto-flow: column; makes children columns so there's no need to know the amount of children*/}
       <div key={uuidv4()} ref={scrollRef} className="grid xl:grid-flow-col xl:auto-cols-[21%] max-w-[500px] mx-auto xl:max-w-none xl:mx-0 gap-8 px-8 pb-8 xl:overflow-x-hidden xl:overscroll-x-contain xl:snap-x overscroll-y-contain snap-y snap-mandatory scroll-px-8 text-cloudBurstBlue scroll-smooth">
         <div className='grid gap-8 xl:grid-rows-[min-content] p-8 bg-gray-300 rounded-md shadow-container snap-start'>
-          <img src={bgImg} alt="art img" className="w-full brightness-75 aspect-video object-cover" />
+          <img src={bgImg} alt="art img" className="w-full brightness-75 aspect-video object-cover hover:scale-110 transition-transform duration-150" />
           <p>Image caption text.</p>
         </div>
         <div className={`${showState ? "hidden": ""} xl:hidden flex flex-col items-center`}>
@@ -128,7 +128,7 @@ const Artwork = () => {
       </IconContext.Provider>
       <IconContext.Provider value={{className: "text-cloudBurstBlue hover:text-[#61D9FF] h-6 w-6"}}>
         <div className='flex items-center'>
-          <div className={`flex items-center justify-center xl:hidden gap-8 pb-8`}>
+          <div className={`xl:hidden gap-8 pb-8`}>
             <div className='flex justify-center items-center bg-black bg-opacity-10 rounded-full h-16 w-16'>
               <button onClick={() => scrollHandler(-300, 2)}><BsChevronLeft /></button>
             </div>
@@ -136,7 +136,7 @@ const Artwork = () => {
           <div key={uuidv4()} ref={scrollRef2} className="grid grid-flow-col auto-cols-[100%] max-w-[400px] mx-auto xl:max-w-none xl:mx-0 gap-8 px-8 pb-8 overflow-x-hidden overscroll-x-contain snap-x snap-mandatory scroll-px-8 scroll-smooth">
             {imgArr2}
           </div>
-          <div className={`flex items-center justify-center xl:hidden col-start-3 gap-8 pb-8`}>
+          <div className={`xl:hidden col-start-3 gap-8 pb-8`}>
             <div className='flex justify-center items-center bg-black bg-opacity-10 rounded-full h-16 w-16'>
               <button onClick={() => scrollHandler(300, 2)}><BsChevronRight /></button>
             </div>
