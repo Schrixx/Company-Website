@@ -127,9 +127,9 @@ const Artwork = () => {
         </div>
       </IconContext.Provider>
       <IconContext.Provider value={{className: "text-cloudBurstBlue hover:text-[#61D9FF] h-6 w-6"}}>
-        <div className='grid grid-cols-3 xl:grid-cols-none'>
-          <div className={`flex items-center justify-center xl:hidden col-start-1 gap-8 pb-8`}>
-            <div className='hidden lg:flex justify-center items-center bg-black bg-opacity-10 rounded-full h-16 w-16'>
+        <div className='flex items-center'>
+          <div className={`flex items-center justify-center xl:hidden gap-8 pb-8`}>
+            <div className='flex justify-center items-center bg-black bg-opacity-10 rounded-full h-16 w-16'>
               <button onClick={() => scrollHandler(-300, 2)}><BsChevronLeft /></button>
             </div>
           </div>
@@ -137,7 +137,7 @@ const Artwork = () => {
             {imgArr2}
           </div>
           <div className={`flex items-center justify-center xl:hidden col-start-3 gap-8 pb-8`}>
-            <div className='hidden lg:flex justify-center items-center bg-black bg-opacity-10 rounded-full h-16 w-16'>
+            <div className='flex justify-center items-center bg-black bg-opacity-10 rounded-full h-16 w-16'>
               <button onClick={() => scrollHandler(300, 2)}><BsChevronRight /></button>
             </div>
           </div>
