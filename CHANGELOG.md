@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.3.0](https://github.com/Schrixx/Landing-Page/compare/v0.2.0...v0.3.0) (2023-08-02)
+
+
+### Features
+
+* add about page ([332c088](https://github.com/Schrixx/Landing-Page/commit/332c088033992cc10e92280293e653337640e239))
+* add contact page ([74b5f0b](https://github.com/Schrixx/Landing-Page/commit/74b5f0b4852e53fd2c6bafd9631223c6ff81b234))
+* add note found page ([594e1f1](https://github.com/Schrixx/Landing-Page/commit/594e1f1aec9f73670455b8c7ef1c5dfdc6cdc7b5))
+
 ## [0.2.0](https://github.com/Schrixx/Landing-Page/compare/v0.1.0...v0.2.0) (2023-07-26)
 
 
