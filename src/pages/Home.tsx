@@ -21,11 +21,20 @@ import Button from 'src/components/ui/Button'
 import LargeHeading from 'src/components/ui/LargeHeading'
 import { v4 as uuidv4 } from 'uuid'
 import { ReviewsData } from 'src/data/ReviewsData'
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { NavLink } from 'react-router-dom'
 import Layout from 'src/components/Layout'
 
 const Home = () => {
+
+  // scroll top on load
+  useEffect(() => {
+    document.documentElement.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant", // Optional if you want to skip the scrolling animation
+    });
+  })
 
   const scrollRef = useRef<HTMLDivElement>(null)
 

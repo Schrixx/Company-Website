@@ -1,4 +1,4 @@
-import { ReactNode, useRef, useState } from 'react'
+import { ReactNode, useRef, useState, useEffect } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 
 import Layout from 'src/components/Layout'
@@ -16,7 +16,18 @@ import { BsChevronLeft, BsChevronRight } from 'react-icons/bs'
 import { IconContext } from 'react-icons'
 
 const Artwork = () => {
-  let [showState, setShowState] = useState<boolean>(false)
+
+  // scroll top on load
+  useEffect(() => {
+    document.documentElement.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant", // Optional if you want to skip the scrolling animation
+    });
+  })
+
+  // state manager for collapsing images in mobile view
+  let [showMobileImages, setShowMobileImages] = useState<boolean>(false)
 
   const scrollRef = useRef<HTMLDivElement>(null)
   const scrollRef2 = useRef<HTMLDivElement>(null)
@@ -25,7 +36,7 @@ const Artwork = () => {
   let imgArr2: ReactNode[] = []
 
   const showToggler = () => {
-    setShowState((showState) => !showState)
+    setShowMobileImages((showMobileImages) => !showMobileImages)
     window.scrollTo({top: 0, left: 0})
   }
 
@@ -43,7 +54,7 @@ const Artwork = () => {
     imgArr1.push(
       <>
         {/* making the rows min-content makes it so text doesn't overflow */}
-        <div key={uuidv4()} className={`${showState ? "grid" : "hidden xl:grid"} gap-8 xl:grid-rows-[min-content] p-8 bg-gray-300 rounded-md shadow-container snap-start`}>
+        <div key={uuidv4()} className={`${showMobileImages ? "grid" : "hidden xl:grid"} gap-8 xl:grid-rows-[min-content] p-8 bg-gray-300 rounded-md shadow-container snap-start`}>
           <img src={bgImg} alt="art img" className="w-full brightness-75 aspect-video object-cover hover:scale-110 transition-transform duration-150" />
           <p>Image caption text.</p>
         </div>
@@ -83,7 +94,7 @@ const Artwork = () => {
 
       {/* single items */}
       <div className='text-center p-8'><LargeHeading size="md">Individual Images</LargeHeading></div>
-      <IconContext.Provider value={{className: "text-cloudBurstBlue hover:text-[#61D9FF] h-6 w-6"}}>
+      <IconContext.Provider value={{className: "text-cloudBurstBlue xl:hover:text-[#61D9FF] h-6 w-6"}}>
         <div className={`hidden xl:flex justify-end mr-[10%] gap-8 pb-8`}>
           <div className='hidden lg:flex justify-center items-center bg-black bg-opacity-10 rounded-full h-10 w-10'>
             <button onClick={() => scrollHandler(-300, 1)}><BsChevronLeft /></button>
@@ -99,14 +110,14 @@ const Artwork = () => {
           <img src={bgImg} alt="art img" className="w-full brightness-75 aspect-video object-cover hover:scale-110 transition-transform duration-150" />
           <p>Image caption text.</p>
         </div>
-        <div className={`${showState ? "hidden": ""} xl:hidden flex flex-col items-center`}>
+        <div className={`${showMobileImages ? "hidden": ""} xl:hidden flex flex-col items-center`}>
           <button onClick={showToggler} className='flex flex-col items-center gap-4'>
             <p>Show More</p>
             <PiArrowCircleDownFill color="cloudBurstBlue" size="40px" />
           </button>
         </div>
         {imgArr1}
-        <div className={`${showState ? "": "hidden"} xl:hidden flex flex-col items-center`}>
+        <div className={`${showMobileImages ? "": "hidden"} xl:hidden flex flex-col items-center`}>
           <button onClick={showToggler} className='flex flex-col items-center gap-4'>
             <p>Show Less</p>
             <PiArrowCircleUpFill color="cloudBurstBlue" size="40px" />
@@ -116,7 +127,7 @@ const Artwork = () => {
 
       {/* element groups */}
       <div className='text-center p-8'><LargeHeading size="md">Image Groups</LargeHeading></div>
-      <IconContext.Provider value={{className: "text-cloudBurstBlue hover:text-[#61D9FF] h-6 w-6"}}>
+      <IconContext.Provider value={{className: "text-cloudBurstBlue xl:hover:text-[#61D9FF] h-6 w-6"}}>
         <div className={`hidden xl:flex justify-end mr-[10%] gap-8 pb-8`}>
           <div className='hidden lg:flex justify-center items-center bg-black bg-opacity-10 rounded-full h-10 w-10'>
             <button onClick={() => scrollHandler(-1000, 2)}><BsChevronLeft /></button>
@@ -126,18 +137,18 @@ const Artwork = () => {
           </div>
         </div>
       </IconContext.Provider>
-      <IconContext.Provider value={{className: "text-cloudBurstBlue hover:text-[#61D9FF] h-6 w-6"}}>
-        <div className='flex items-center'>
-          <div className={`xl:hidden gap-8 pb-8`}>
-            <div className='flex justify-center items-center bg-black bg-opacity-10 rounded-full h-16 w-16'>
+      <IconContext.Provider value={{className: "text-cloudBurstBlue xl:hover:text-[#61D9FF] h-6 w-6"}}>
+        <div className='flex items-center w-full'>
+          <div className={`xl:hidden gap-8 pb-8 w-full flex justify-center`}>
+            <div className='flex justify-center items-center bg-black bg-opacity-10 rounded-full h-10 w-10 sm:h-16 sm:w-16 mx-1 lg:mx-0'>
               <button onClick={() => scrollHandler(-300, 2)}><BsChevronLeft /></button>
             </div>
           </div>
           <div key={uuidv4()} ref={scrollRef2} className="grid grid-flow-col auto-cols-[100%] max-w-[400px] mx-auto xl:max-w-none xl:mx-0 gap-8 px-8 pb-8 overflow-x-hidden overscroll-x-contain snap-x snap-mandatory scroll-px-8 scroll-smooth">
             {imgArr2}
           </div>
-          <div className={`xl:hidden col-start-3 gap-8 pb-8`}>
-            <div className='flex justify-center items-center bg-black bg-opacity-10 rounded-full h-16 w-16'>
+          <div className={`xl:hidden gap-8 pb-8 w-full flex justify-center`}>
+            <div className='flex justify-center items-center bg-black bg-opacity-10 rounded-full h-10 w-10 sm:h-16 sm:w-16 mx-1 lg:mx-0'>
               <button onClick={() => scrollHandler(300, 2)}><BsChevronRight /></button>
             </div>
           </div>

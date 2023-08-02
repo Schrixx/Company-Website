@@ -1,3 +1,5 @@
+import { useEffect } from 'react'
+
 import Layout from "src/components/Layout"
 
 import friends from 'assets/friends.jpg'
@@ -9,6 +11,16 @@ import LargeHeading from "src/components/ui/LargeHeading"
 import { MemberData } from "src/data/MemberData"
 
 const About = () => {
+
+  // scroll top on load
+  useEffect(() => {
+    document.documentElement.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant", // Optional if you want to skip the scrolling animation
+    });
+  })
+
   return (
     <Layout>
         {/* space under fixed nav */}
@@ -50,13 +62,13 @@ const About = () => {
         {/* members */}
         <div className="text-center">
           <LargeHeading size="xl">Our Family</LargeHeading>
-          <div className="py-standard w-full flex flex-wrap justify-center gap-8">
+          <div className="py-standard px-4 w-full flex flex-wrap justify-center gap-8">
             {MemberData.map((item) => {
               return (
-                <div className="flex flex-col gap-4 px-4 nax-w-5xl">
-                  <img src={profilePicture} className="w-80 shadow-md hover:scale-110 transition-transform duration-150" />
+                <div className="flex flex-col items-center gap-4">
+                  <img src={profilePicture} className="w-60 shadow-md hover:scale-110 transition-transform duration-150" />
                   <LargeHeading size="md">{item.name}</LargeHeading>
-                  <p className="text-bostonBlue">{item.title}</p>
+                  <p className="text-bostonBlue max-w-[15rem]">{item.title}</p>
                 </div>
               )
             })}
