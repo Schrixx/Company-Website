@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom'
 import { FooterTopData, FooterBottomData, FooterSocials } from 'src/data/FooterData'
 import { v4 as uuidv4 } from 'uuid'
-import logo from 'assets/logo.png'
+import logo from 'assets/logos/logo.png'
 
 const Footer = () => {
   return (
