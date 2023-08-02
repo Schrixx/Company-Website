@@ -43,7 +43,7 @@ const Navbar = () => {
               {NavData.map((item) => {
                 return (
                   <li key={uuidv4()}>
-                    <NavLink to={item.path} className="text-cloudBurstBlue hover:text-white hover:bg-fedora hover:drop-shadow pb-[2.33rem] pt-[2.36rem] px-6 tracking-wide rounded-sm linkFont">
+                    <NavLink to={item.path} className="text-cloudBurstBlue hover:text-white hover:bg-fedora hover:drop-shadow pb-[2.33rem] pt-[2.36rem] px-6 tracking-wide rounded-sm linkFont transition-colors">
                       <span className="hover:drop-shadow-xl">{item.title}</span>
                     </NavLink>
                   </li>
