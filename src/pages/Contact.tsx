@@ -19,7 +19,7 @@ const Contact = () => {
         <div className="pt-standard"></div>
 
         <div className='relative pt-standard xl:px-32 flex flex-col xl:flex-row justify-around items-center gap-8 w-full'>
-        <div className="absolute bg-fixed z-[-10] h-[1080px] w-full bg-[url('assets/grid.svg')] bg-no-repeat bg-cover" />
+          <div className="absolute bg-fixed z-[-10] h-[1080px] w-full bg-[url('assets/grid.svg')] bg-no-repeat bg-cover" />
           <div className='grid gap-4 max-w-xl text-center'>
             <LargeHeading size="md">Your creative journey starts here!</LargeHeading>
             <LargeHeading size="md">Contact us today to discuss commission price and details.</LargeHeading>

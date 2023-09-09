@@ -16,7 +16,7 @@ const Footer = () => {
             <ul className='flex flex-col lg:flex-row items-start'>
               {FooterTopData.map((item) => {
                 return (
-                  <li key={uuidv4()} className={`w-full lg:w-1/4 ${item.border} border-black lg:border-0 ${item.padding} ${item.margin} lg:hover:bg-cloudBurstBlueHover hover:underline lg:hover:no-underline`}>
+                  <li key={uuidv4()} className={`w-full lg:w-1/4 ${item.border} border-black lg:border-0 ${item.padding} ${item.margin} lg:hover:bg-cloudBurstBlueHover hover:underline lg:hover:no-underline transition-colors`}>
                     <NavLink to={item.path} className="h-full">
                       <p className='font-medium text-lg'>{item.title}</p>
                       <p className='text-xs'>{item.text}</p>
@@ -49,7 +49,7 @@ const Footer = () => {
           <ul className='flex flex-row gap-8 w-fit px-4 mt-16 lg:mt-0'>
             {FooterSocials.map((item) => {
               return (
-                <li key={uuidv4()} className=''>
+                <li key={uuidv4()} className='hover:scale-105 transition-transform'>
                   <NavLink to={item.url} target='_blank'>{item.icon}</NavLink>
                 </li>
               )
